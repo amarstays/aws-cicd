@@ -8,7 +8,10 @@ resource "aws_s3_bucket" "codebuild_bucket" {
       }
     }
   }
-
+  
+  lifecycle {
+    create_before_destroy = true
+  }
   tags = var.custom_tags
 }
 
@@ -23,7 +26,10 @@ resource "aws_s3_bucket" "codepipeline_bucket" {
       }
     }
   }
-
+  
+  lifecycle {
+    create_before_destroy = true
+  }
   # Neede for CloudWatch
   versioning {
     enabled = true

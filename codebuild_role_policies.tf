@@ -70,7 +70,10 @@ resource "aws_iam_role_policy" "codebuild-role-policy" {
       "Action": [
         "s3:*"
       ],
-      "Resource":"*"
+      "Resource": [
+        "${aws_s3_bucket.codepipeline_bucket.arn}",
+        "${aws_s3_bucket.codepipeline_bucket.arn}/*"
+      ]
     }
   ]
 }
