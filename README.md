@@ -2,7 +2,7 @@
 
 ### About
 
-This pipeline connects to other git repo present in .tfvars file and builds it on aws.
+This pipeline connects to other git repo present in .tfvars file and builds it on AWS.
 Once this pipeline is deployed, any new coded changes to the source code repo will trigger the pipleine. The pipeline will provision the required resources, make a build and run a sample test and once sucessful, change the build status to success.
 
 ## Prerequisites (on Local or runner system such as build specific VM/container)
